@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="../src/styles/quiz.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="../src/scripts/quiz.js"></script>
+</head>
+<body class="w-full h-screen flex flex-col items-center justify-center  bg-slate-100" onload="loadData()">
+    <h3 class="w-[70%] py-3">
+        <a class="bg-slate-200 p-1 rounded-md px-3 hover:bg-slate-300 cursor-pointer" href="../index.html">
+            <i class="bi bi-arrow-left"></i>
+            retour à l'accueil
+        </a>
+    </h3>
+    <main class="w-[70%] h-[90vh] max-h-max bg-white rounded-lg shadow-sm flex flex-col items-center justify-start p-5">
+        <h1 class="text-left w-full mb-3 text-lg" id="title">Javascript</h1>
+        <div class="w-[100%] flex items-center justify-between gap-3">
+            <div class="w-[100%] h-[10px] bg-slate-200 rounded-full" id="progress">
+                <div class="bg-green-500 h-[100%] w-[20%] rounded-full" id="progressLine"></div>
+            </div>
+            <p id="Qnumber">2/10</p>
+        </div>
+        <div class="w-[100%] min-h-[50px] mt-2 border-2 border-slate-200 rounded-lg" id="Question">
+            <p id="questionText" class="p-4">
+                What is the output of the following JavaScript code: `console.log(typeof null);`?
+            </p>
+        </div>
+        <h1 class="text-lg text-blue-950 m-3 font-medium">
+            Choisissez la bonne réponse.
+        </h1>
+        <form action="" class="w-full ">
+            <label for="choice1"  class="w-full block p-4 border-2 border-b-4 has-[.peer:checked]:border-blue-400 mt-2 border-slate-200 rounded-lg cursor-pointer">
+                <input type="radio" id="choice1" name="answer" value="object" class="peer hidden">
+                <span id="choice1Label"></span>
+            </label>
+            <label for="choice2" class="w-full block p-4 border-2 border-b-4 has-[.peer:checked]:border-blue-400 mt-2 border-slate-200 rounded-lg cursor-pointer">
+                <input type="radio" id="choice2" name="answer" value="null" class="peer hidden">
+                <span id="choice2Label"></span>
+            </label>
+            <label for="choice3" class="w-full block p-4 border-2 border-b-4 has-[.peer:checked]:border-blue-400 mt-2 border-slate-200 rounded-lg cursor-pointer">
+                <input type="radio" id="choice3" name="answer" value="undefined" class="peer hidden">
+                <span id="choice3Label"></span>
+            </label>
+        </form>
+        <span class="flex-1"></span>
+        <div id="buttons" class="self-end justify-self-end mt-auto ">
+            <input type="button" value="skip" id="skip" class="bg-slate-200 border-b-4 border-slate-400 px-4 py-2 mt-2 mx-1 rounded-md cursor-pointer" onclick="skip()">
+            <input type="button" value="valider" id="valider" onclick="nextQuestion()" class="bg-blue-400 border-b-4 border-blue-500 px-4 text-white cursor-pointer py-2 mt-2 mx-1 rounded-md">
+        </div>
+    </main>
+</body>
+</html>
