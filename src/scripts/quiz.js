@@ -266,5 +266,5 @@ function result(){
     }
     totals[sectionIndex] = total
     alert(`total ${total}/10`)
-    window.location.href = "index.html"
+    window.location.href = "../index.html"
 }
