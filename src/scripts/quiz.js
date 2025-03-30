@@ -254,7 +254,6 @@ function skip(){
         localStorage.setItem('userAnswers', JSON.stringify(userAnswers))
         refresh()
         result()
-        window.location.href = "index.html";
     }
 }
 function result(){
@@ -267,4 +266,5 @@ function result(){
     }
     totals[sectionIndex] = total
     alert(`total ${total}/10`)
+    window.location.href = "index.html"
 }
