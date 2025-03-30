@@ -254,6 +254,7 @@ function skip(){
         localStorage.setItem('userAnswers', JSON.stringify(userAnswers))
         refresh()
         result()
+        window.location.href = "index.html";
     }
 }
 function result(){
