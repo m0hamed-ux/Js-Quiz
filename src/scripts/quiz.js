@@ -192,6 +192,10 @@ const questionsList = [
 let section = new URLSearchParams(window.location.search).get('section')
 let userAnswers = (localStorage.getItem('userAnswers'))?JSON.parse(localStorage.getItem('userAnswers')):[[], [], []]
 function loadData(){
+    if (!section || section.trim() === '' || !['javascript', 'html', 'css'].includes(section.toLowerCase())) {
+        document.getElementById('quizBox').style.display = 'none'
+        document.getElementById('errorBox').style.display = 'flex'
+    }
     jsProgress = (localStorage.getItem('jsProgress')) ? parseInt(localStorage.getItem('jsProgress')) : 1;
     htmlProgress = (localStorage.getItem('htmlProgress')) ? parseInt(localStorage.getItem('htmlProgress')) : 1;
     cssProgress = (localStorage.getItem('cssProgress')) ? parseInt(localStorage.getItem('cssProgress')) : 1;
@@ -217,6 +221,7 @@ function loadData(){
     refresh()
 }
 function refresh(){
+    closeHint()
     document.getElementById('Question').style.borderColor = 'rgb(226 232 240 / var(--tw-border-opacity, 1)'
     let num = document.getElementById('Qnumber')
     let pLine = document.getElementById('progressLine')
@@ -298,6 +303,12 @@ function result(){
     alert(`total ${total}/10`)
     window.location.href = "../index.html"
 }
-function showHint(){
-    alert(questionsList[sectionIndex][Qnum - 1].hint)
+function showHint() {
+    document.getElementById('hintText').innerText = questionsList[sectionIndex][Qnum - 1].hint
+    let rect = document.getElementById('hintButton').getBoundingClientRect()
+    document.getElementById('hintBox').style.top = `${rect.bottom + window.scrollY + 10}px`
+    document.getElementById('hintBox').classList.remove('hidden')
+}
+function closeHint() {
+    document.getElementById('hintBox').classList.add('hidden');
 }
