@@ -12,13 +12,13 @@
     <script src="../src/scripts/quiz.js"></script>
 </head>
 <body class="w-full h-screen flex flex-col items-center p-4 bg-slate-100" onload="loadData()">
-    <h3 class="md:w-[70%] w-[90%] py-3">
+    <h3 class="md:w-[70%] w-[99%] py-3">
         <a class="bg-slate-200 p-1 rounded-md px-3 hover:bg-slate-300 cursor-pointer" href="../index.html">
             <i class="bi bi-arrow-left"></i>
             retour à l'accueil
         </a>
     </h3>
-    <main class="md:w-[70%] w-[90%] max-h-max bg-white rounded-lg shadow-sm flex flex-col items-center justify-start p-5" id="quizBox">
+    <main class="md:w-[70%] w-[99%] max-h-max bg-white rounded-lg shadow-sm flex flex-col items-center justify-start p-5" id="quizBox">
         <h1 class="text-left w-full mb-3 text-lg" id="title">Javascript</h1>
         <div class="w-[100%] flex items-center justify-between gap-3">
             <div class="w-[100%] h-[10px] bg-slate-200 rounded-full" id="progress">
@@ -39,15 +39,15 @@
         </h1>
         <form action="" class="w-full ">
             <label for="choice1"  class="w-full block p-4 border-2 border-b-4 has-[.peer:checked]:border-blue-400 mt-2 border-slate-200 rounded-lg cursor-pointer">
-                <input type="radio" id="choice1" name="answer" value="object" class="peer hidden">
+                <input type="radio" id="choice1" name="answer" value="object" class="peer hidden" onclick="closeHint()">
                 <span id="choice1Label"></span>
             </label>
             <label for="choice2" class="w-full block p-4 border-2 border-b-4 has-[.peer:checked]:border-blue-400 mt-2 border-slate-200 rounded-lg cursor-pointer">
-                <input type="radio" id="choice2" name="answer" value="null" class="peer hidden">
+                <input type="radio" id="choice2" name="answer" value="null" class="peer hidden" onclick="closeHint()">
                 <span id="choice2Label"></span>
             </label>
             <label for="choice3" class="w-full block p-4 border-2 border-b-4 has-[.peer:checked]:border-blue-400 mt-2 border-slate-200 rounded-lg cursor-pointer">
-                <input type="radio" id="choice3" name="answer" value="undefined" class="peer hidden">
+                <input type="radio" id="choice3" name="answer" value="undefined" class="peer hidden" onclick="closeHint()">
                 <span id="choice3Label"></span>
             </label>
         </form>
@@ -57,7 +57,7 @@
             <input type="button" value="valider" id="valider" onclick="nextQuestion()" class="bg-blue-400 border-b-4 border-blue-500 px-4 text-white cursor-pointer py-2 mt-2 mx-1 rounded-md">
         </div>
     </main>
-    <section id="errorBox" class="md:w-[70%] w-[90%] h-[90vh] max-h-max bg-white rounded-lg shadow-sm hidden flex-col items-center justify-start p-5">
+    <section id="errorBox" class="md:w-[70%] w-[99%] h-[90vh] max-h-max bg-white rounded-lg shadow-sm hidden flex-col items-center justify-start p-5">
         <dotlottie-player
             src="https://lottie.host/294c7ae2-3f21-46dc-a955-edd401712dcd/VGZf2pSwNa.lottie"
             background="transparent"
