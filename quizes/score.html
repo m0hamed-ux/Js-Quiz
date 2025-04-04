@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../src/scripts/score.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/db9d9c8d3d.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+<body onload="calcScore()">
+    <body class="w-full h-screen flex flex-col items-center p-4 bg-slate-100">
+        <main class="md:w-[70%] w-[99%] max-h-max bg-white rounded-lg shadow-sm flex flex-col items-center justify-start p-5" id="quizBox">
+            <div class="relative w-40 h-30">
+                <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 36 36">
+                    <path
+                        class="text-gray-300"
+                        d="M18 2.0845
+                           a 15.9155 15.9155 0 0 1 0 31.831
+                           a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="4"
+                    ></path>
+                    <path
+                        class="text-blue-500"
+                        id="prg"
+                        d="M18 2.0845
+                           a 15.9155 15.9155 0 0 1 0 31.831
+                           a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="4"
+                        stroke-dasharray="10, 100"
+                        stroke-linecap="round"
+                    ></path>
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="text-xl font-semibold text-gray-700" id="score">2/30</span>
+                </div>
+                
+            </div>
+            <h3 class="text-yellow-500 font-medium text-2xl p-2" id="comment">Perfect</h3>
+            <p class="p-0 m-0 text-slate-400" id="commentDesc">Perfrect game</p>
+            <div class="max-w-[80%] w-max flex gap-3 justify-center p-4">
+                <div class="flex-1 text-center w-max h-max rounded-lg bg-green-500 border-2 border-green-500">
+                    <h1 class="text-white text-[0.7rem] md:text-[0.85rem] px-1 text-nowrap">Réponses correctes</h1>
+                    <p class="rounded-md bg-white p-1 px-5 text-green-500 font-bold text-nowrap">12 <i class="bi bi-check-circle-fill"></i></p>
+                </div>
+                <div class="flex-1 text-center w-max h-max rounded-lg bg-red-500 border-2 border-red-500">
+                    <h1 class="text-white text-[0.7rem] md:text-[0.85rem] px-1 text-nowrap">Réponses incorrectes</h1>
+                    <p class="rounded-md bg-white p-1 px-5 text-red-500 font-bold text-nowrap">4 <i class="bi bi-x-circle-fill"></i></p>
+                </div>
+                <div class="flex-1 text-center w-max h-max rounded-lg bg-yellow-500 border-2 border-yellow-500">
+                    <h1 class="text-white text-[0.7rem] md:text-[0.85rem] px-1 text-nowrap">Indices utilisés</h1>
+                    <p class="rounded-md bg-white p-1 px-5 text-yellow-500 font-bold text-nowrap">3 <i class="bi bi-lightbulb-fill"></i></p>
+                </div>
+                <div class="flex-1 text-center w-max h-max rounded-lg bg-slate-500 border-2 border-slate-500">
+                    <h1 class="text-white text-[0.7rem] md:text-[0.85rem] px-1 text-nowrap">Questions sautées</h1>
+                    <p class="rounded-md bg-white p-1 px-5 text-slate-500 font-bold text-nowrap">6 <i class="bi bi-skip-end-fill"></i></p>
+                </div>
+            </div>
+            
+            <div class="w-full">
+                <div class="w-full flex h-max items-center bg-yellow-500 p-[2.2px] mb-2 rounded-lg cursor-pointer">
+                    <div class="bg-white flex-1 flex items-center gap-1 p-1 rounded-md ">
+                        <i class="fa-brands fa-square-js text-yellow-500 font-medium text-[30px]"></i>
+                        <div class="text-yellow-500 font-medium flex-1">JavaScript</div>
+                        <div class="relative w-10 h-10">
+                            <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 36 36">
+                                <path
+                                    class="text-gray-300"
+                                    d="M18 2.0845
+                                       a 15.9155 15.9155 0 0 1 0 31.831
+                                       a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                ></path>
+                                <path
+                                    class="text-yellow-500"
+                                    d="M18 2.0845
+                                       a 15.9155 15.9155 0 0 1 0 31.831
+                                       a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-dasharray="70, 100"
+                                    stroke-linecap="round"
+                                ></path>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-xs font-semibold text-yellow-500">7/10</span>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="fa-solid p-1 fa-caret-right text-white"></i>
+                </div>
+
+                <div class="w-full flex h-max items-center bg-blue-500 p-[2.2px] mb-2 rounded-lg cursor-pointer">
+                    <div class="bg-white flex-1 flex items-center gap-1 p-1 rounded-md ">
+                        <i class="fa-brands fa-css3-alt text-blue-500 font-medium text-[30px]"></i>
+                        <div class="text-blue-500 font-medium flex-1">CSS</div>
+                        <div class="relative w-10 h-10">
+                            <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 36 36">
+                                <path
+                                    class="text-gray-300"
+                                    d="M18 2.0845
+                                       a 15.9155 15.9155 0 0 1 0 31.831
+                                       a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                ></path>
+                                <path
+                                    class="text-blue-500"
+                                    d="M18 2.0845
+                                       a 15.9155 15.9155 0 0 1 0 31.831
+                                       a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-dasharray="50, 100"
+                                    stroke-linecap="round"
+                                ></path>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-xs font-semibold text-blue-500">5/10</span>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="fa-solid p-1 fa-caret-right text-white"></i>
+                </div>
+
+                <div class="w-full flex h-max items-center bg-orange-500 p-[2.2px] mb-2 rounded-lg cursor-pointer">
+                    <div class="bg-white flex-1 flex items-center gap-1 p-1 rounded-md ">
+                        <i class="fa-brands fa-html5 text-orange-500 font-medium text-[30px]"></i>
+                        <div class="text-orange-500 font-medium flex-1">HTML</div>
+                        <div class="relative w-10 h-10">
+                            <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 36 36">
+                                <path
+                                    class="text-gray-300"
+                                    d="M18 2.0845
+                                       a 15.9155 15.9155 0 0 1 0 31.831
+                                       a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                ></path>
+                                <path
+                                    class="text-orange-500"
+                                    d="M18 2.0845
+                                       a 15.9155 15.9155 0 0 1 0 31.831
+                                       a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-dasharray="90, 100"
+                                    stroke-linecap="round"
+                                ></path>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-xs font-semibold text-orange-500">9/10</span>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="fa-solid p-1 fa-caret-right text-white"></i>
+                </div>
+            </div>
+        </main>
+    </body>
+</body>
+</html>

@@ -4,13 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="src/scripts/main.js"></script>
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/db9d9c8d3d.js" crossorigin="anonymous"></script>
     <title>QCM</title>
 </head>
-<body>
-    <form action="">
-        <input type="button" value="js" onclick="Goto('JavaScript')">
-        <input type="button" value="html" onclick="Goto('HTML')">
-        <input type="button" value="css" onclick="Goto('Css')">
+<body class="bg-[#f0f1f3]">
+    <form action="" class="flex w-full sm:flex-row flex-col h-screen justify-center items-center gap-2">
+        <div class="flex-1 sm:max-w-55 cursor-pointer hover:-translate-y-2 transition-all border-2 bottom-shadow bg-white rounded-lg hover:border-blue-500 border-transparent">
+            <div class="h-50 w-full bg-yellow-500 rounded-se-md rounded-ss-md flex justify-center items-center p-4 pattern js">
+            <img src="https://em-content.zobj.net/source/telegram/386/man-technologist_1f468-200d-1f4bb.webp" alt="" class="h-[100%]">
+            </div>
+            <div class="w-full p-1">
+            <h1 class="p-1 pb-0 text-blue-950 font-medium">Javascript</h1>
+            <p class="p-1 pt-0 text-slate-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+            <input type="button" value="start" onclick="Goto('JavaScript')" class="w-[calc(100%-8px)] bg-yellow-500 m-1 rounded-md p-1 text-white">
+            </div>
+        </div>
+        <div class="flex-1  sm:max-w-55 cursor-pointer hover:-translate-y-2 transition-all border-2 bottom-shadow bg-white rounded-lg hover:border-blue-500 border-transparent">
+            <div class="h-50 w-full bg-blue-500 rounded-se-md rounded-ss-md flex justify-center items-center p-4 pattern html">
+            <img src="https://em-content.zobj.net/source/telegram/386/alien-monster_1f47e.webp" alt="" class="h-[100%]">
+            </div>
+            <div class="w-full p-1">
+            <h1 class="p-1 pb-0 text-blue-950 font-medium">HTML</h1>
+            <p class="p-1 pt-0 text-slate-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+            <input type="button" value="start" onclick="Goto('HTML')" class="w-[calc(100%-8px)] bg-blue-500 m-1 rounded-md p-1 text-white">
+            </div>
+        </div>
+        <div class="flex-1 sm:max-w-55 cursor-pointer hover:-translate-y-2 transition-all border-2 bottom-shadow bg-white rounded-lg hover:border-blue-500 border-transparent">
+            <div class="h-50 w-full bg-orange-500 rounded-se-md rounded-ss-md flex justify-center items-center p-4 pattern css">
+            <img src="https://em-content.zobj.net/source/telegram/386/artist-palette_1f3a8.webp" alt="" class="h-[100%]">
+            </div>
+            <div class="w-full p-1">
+            <h1 class="p-1 pb-0 text-blue-950 font-medium">CSS</h1>
+            <p class="p-1 pt-0 text-slate-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+            <input type="button" value="start" onclick="Goto('Css')" class="w-[calc(100%-8px)] bg-orange-500 m-1 rounded-md p-1 text-white">
+            </div>
+        </div>
     </form>
 </body>
 </html>

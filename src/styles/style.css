@@ -1,0 +1,30 @@
+.bottom-shadow{
+    box-shadow: 0 0.25em 0 rgb(195, 198, 209);
+    &:hover{
+        box-shadow: 0 0.25em 0 #3b82f6;
+    }
+}
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+.pattern{
+    background-size: cover;
+}
+.pattern.js{
+    background-image: url(../images/js.png);
+    background-size: cover;
+}
+.pattern.html{
+    background-image: url(../images/html.png);
+    background-size: cover;
+}
+.pattern.css{
+    background-image: url(../images/css.png);
+    background-size: cover;
+}
+.disabled *{
+    opacity: 0.7;
+}

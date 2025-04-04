@@ -301,7 +301,7 @@ function result(){
     }
     totals[sectionIndex] = total
     alert(`total ${total}/10`)
-    window.location.href = "../index.html"
+    window.location.href = `score.html?score=${encodeURIComponent(total)}`;
 }
 function showHint() {
     document.getElementById('hintText').innerText = questionsList[sectionIndex][Qnum - 1].hint
