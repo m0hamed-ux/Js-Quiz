@@ -1,0 +1,38 @@
+.flex-column{
+    flex-direction: column !important;
+}
+.bottom-shadow{
+    box-shadow: 0 0.3em 0 #1d74ff;
+}
+.bottom-shadow.disabled{
+    box-shadow: 0 0.3em 0 #b3b3b3;
+}
+.pointes span{
+    width: 15px;
+    height: 15px;
+    background-color: #bfbfbf;
+    margin: 2px;
+    border-radius: 100%;
+}
+.bouncing{
+    animation: bouncing 2s infinite;
+}
+.popup{
+    animation: popup 0.2s;
+}
+@keyframes bouncing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+@keyframes popup {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}

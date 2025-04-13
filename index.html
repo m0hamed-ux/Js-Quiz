@@ -7,10 +7,42 @@
     <link rel="stylesheet" href="src/styles/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://kit.fontawesome.com/db9d9c8d3d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
     <title>QCM</title>
 </head>
-<body class="bg-[#f0f1f3]">
-    <form action="" class="flex w-full sm:flex-row flex-col h-screen justify-center items-center gap-2">
+<body class="background">
+    <div class="overflow-hidden w-full flex justify-center items-center h-screen bg-blue-500" id="loading">
+        <h1 class="text-white text-5xl font-bold font-mono h-20 overflow-hidden">Test your <span id="lng" class="">HTML</span> Knowlege</h1>
+    </div>
+    <script>
+        const span = document.getElementById("lng");
+        const languages = ["HTML", "CSS", "JS"];
+        span.style.display = 'inline-block'
+        
+        var index = 0;
+        setInterval(function(){
+            const nextLanguage = languages[(index + 1) % languages.length];
+            gsap.to(span,
+                { 
+                    y: '-100%', duration: 0.5,
+                    onComplete: ()=>{
+                        span.textContent = nextLanguage,
+                        gsap.fromTo(span, 
+                            {y: '100%'},
+                            {y: '0%'}
+                        );
+                        index = (index + 1) % languages.length;
+                    } 
+                },
+            )
+        }, 2000);
+        
+    </script>
+    <!-- <form action="" class="flex w-full sm:flex-row flex-col h-max min-h-screen p-4 justify-center items-center gap-2">
         <div class="flex-1 sm:max-w-55 cursor-pointer hover:-translate-y-2 transition-all border-2 bottom-shadow bg-white rounded-lg hover:border-blue-500 border-transparent">
             <div class="h-50 w-full bg-yellow-500 rounded-se-md rounded-ss-md flex justify-center items-center p-4 pattern js">
             <img src="https://em-content.zobj.net/source/telegram/386/man-technologist_1f468-200d-1f4bb.webp" alt="" class="h-[100%]">
@@ -41,6 +73,6 @@
             <input type="button" value="start" onclick="Goto('Css')" class="w-[calc(100%-8px)] bg-orange-500 m-1 rounded-md p-1 text-white">
             </div>
         </div>
-    </form>
+    </form> -->
 </body>
 </html>

@@ -28,3 +28,11 @@
 .disabled *{
     opacity: 0.7;
 }
+.background {
+    inset: 0;
+    height: max-content;
+    background: white;
+    background: radial-gradient(125% 125% at 50% 10%, #fff 40%, #63e 100%);
+    z-index: -10;
+  }
+  
